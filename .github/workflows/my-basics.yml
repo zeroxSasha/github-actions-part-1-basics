@@ -4,6 +4,9 @@
 
 # better without spacing
 name: My-GithubActions-Basics
+env:
+  APPLICATION_NAME: "MyFlask"
+  DEPLOY_PACKAGE_NAME: "flask-deploy-ver-${{ github.sha }}"
 
 on:
   push:
@@ -22,8 +25,8 @@ jobs:
       run: echo Hello world in Testing!
     - name: Run a multi-line script
       run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+        echo Add other actions to test.
+        echo Application name ${{ env.APPLICATION_NAME }}
 
         
   my_deploy:
@@ -33,6 +36,7 @@ jobs:
     steps:
     - name: Run a one-line script
       run: echo Hello world in Deploy!
-
+    - name: Printing Deployment package
+      run: echo Deploy package name is ${{ env.DEPLOY_PACKAGE_NAME }}
 
     
