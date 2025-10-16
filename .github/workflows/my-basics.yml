@@ -29,7 +29,7 @@ jobs:
         echo Application name ${{ env.APPLICATION_NAME }}
 
     - name: Git clone my repo
-      uses: actions/checkout@v1  # checkout repository to the GitHub Actions runner
+      uses: actions/checkout@v3  # checkout repository to the GitHub Actions runner
 
     - name: List current folder
       run: ls -la
@@ -43,7 +43,7 @@ jobs:
     
     steps:
     - name: Run a one-line script
-      run: echo "Hello world in Deploy! ${{ env.VAR1 }} $LOCAL_VAR"
+      run: echo Hello world in Deploy! ${{ env.VAR1 }} ${{ env.LOCAL_VAR }}
       env:
         LOCAL_VAR: "Super Local var"
       
