@@ -43,7 +43,7 @@ jobs:
     
     steps:
     - name: Run a one-line script
-      run: echo Hello world in Deploy! ${{ env.VAR1 }} $LOCAL_VAR
+      run: echo "Hello world in Deploy! ${{ env.VAR1 }} $LOCAL_VAR"
       env:
         LOCAL_VAR: "Super Local var"
       
